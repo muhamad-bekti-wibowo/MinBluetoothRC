@@ -143,8 +143,8 @@ void processJoystickData(String data) {
 // Hitung nilai PWM motor berdasarkan nilai joystick
 void calculateMotorPWM() {
   // Konversi rentang PWM (0-255) ke (-255 ke 255)
-  int lrValue = map(leftRightPWM, 0, 255, -255, 255);
-  int fbValue = map(forwardBackwardPWM, 0, 255, -255, 255);
+  int fbValue  = map(leftRightPWM, 0, 255, -255, 255);
+  int lrValue = map(forwardBackwardPWM, 0, 255, -255, 255);
 
   // Terapkan deadzone untuk mencegah drift
   if (abs(lrValue) < DEADZONE) lrValue = 0;
